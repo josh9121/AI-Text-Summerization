@@ -1,0 +1,5 @@
+Django
+tranformers
+summarizer
+pipeline
+torch
