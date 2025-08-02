@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Text Summarizer & QA Assistant</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <h2>AI Text Summarizer and QA Assistant</h2><br><br><br><br><br><br><br>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="input_text" rows="10" cols="80" placeholder="Enter text to summarize and ask about...">{{ input_text }}</textarea><br><br>
+        <input type="text" name="question" size="80" placeholder="Enter your question" value="{{ question }}"><br><br>
+        <input type="submit" value="Get Summary & Answer">
+    </form>
+
+    {% if summary %}
+        <h3>Summary:</h3>
+        <p>{{ summary }}</p>
+        <h3>Answer:</h3>
+        <p>{{ answer }}</p>
+    {% endif %}
+</body>
+</html>
